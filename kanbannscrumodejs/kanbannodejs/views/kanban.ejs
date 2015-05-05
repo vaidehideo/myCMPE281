@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign In</title>
+
+    <!-- Bootstrap -->
+   <link rel='stylesheet' href='/stylesheets/bootstrap-theme.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap-theme.min.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+  </head>
+  <script>
+  var onDragEnter = function (event) {
+      event.preventDefault();
+      $("#dropzone").addClass("dragover");
+  },
+  onDragOver = function (event) {
+      event.preventDefault();
+      if (!$("#dropzone").hasClass("dragover")) $("#dropzone").addClass("dragover");
+  },
+  onDragLeave = function (event) {
+      event.preventDefault();
+      $("#dropzone").removeClass("dragover");
+  },
+
+  onDrop = function (event) {
+      event.preventDefault();
+      $("#dropzone").removeClass("dragover");
+
+      var ul = $(this).find('ul')[0];
+      console.log(ul);
+      if (dragItem) {
+          ul.appendChild(dragItem);
+      }
+  };
+
+  var dragItem;
+  $("div")
+      .on("dragstart", function (event) {
+      dragItem = $(event.currentTarget).find('li') && $(event.currentTarget).find('li')[0];
+  });
+
+  $("#dropzone")
+      .on("dragenter", onDragEnter)
+      .on("dragover", onDragOver)
+      .on("dragleave", onDragLeave)
+      .on("drop", onDrop);
+  </script>
+
+<body style="margin:0; background-color: #F2F2F2;">
+
+<!--Header--> 
+<div id = "header">
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/kanban">Welcome <%= name %></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" data-toggle="modal" data-target="#myModal" data-whatever="Delivery Hours">Add Card</a></li>
+          <li><a href="KanbanprojectStatus">Project Status</a></li>
+          <li><a href="index">Logout</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+</div>
+
+    <div class="container" style="width:900px; height:500px;padding-top:70px;">
+    	<div class="row">
+  			<div class="col-md-3">
+  			<h4>Ready to Start</h4>
+  				<ul title="Ready to Start" id="lane_192025152_contents" laneid="192025152" style="height: 512px; -webkit-user-select: none;" class="cmVoice  laneContents connectedSortable  ui-sortable" cmenu="menu_LaneBody"> 
+  				    <div draggable="true"><li id="card_192025057" title="Risk / Issue: Q1 Sales Metrics" class="card  cmVoice  {cMenu:'menu_Card'}" cmenu="menu_Card" style="-webkit-user-select: none; cursor: default;">
+  				          <div class="card-background" style="background-color:#FDD29A;">
+  				               <div class="little-arrow rootVoice {menu:'menu_Card'} clicked" menu="menu_Card" clicked="clicked" style="white-space: nowrap;"></div>                                                 
+  				                  <div class="card-header" style="background-color:rgb(196,140,67)">
+  				                      <div class="cardtext elipses" title="test1">Test 1</div>
+  				                  </div>
+  				               </div>     
+  				     </li>
+  				     </div>
+  				     
+  				      <div draggable="true"><li id="card_192025057" title="Risk / Issue: Q1 Sales Metrics" class="card  cmVoice  {cMenu:'menu_Card'}" cmenu="menu_Card" style="-webkit-user-select: none; cursor: default;">
+  				          <div class="card-background" style="background-color:#FDD29A;">
+  				               <div class="little-arrow rootVoice {menu:'menu_Card'} clicked" menu="menu_Card" clicked="clicked" style="white-space: nowrap;"></div>                                                 
+  				                  <div class="card-header" style="background-color:rgb(196,140,67)">
+  				                      <div class="cardtext elipses" title="test2">Test 2</div>
+  				                  </div> 
+  				               </div> 
+  				     </li>
+  				     </div>
+  				     
+  				     <div draggable="true"><li id="card_192025057" title="Risk / Issue: Q1 Sales Metrics" class="card  cmVoice  {cMenu:'menu_Card'}" cmenu="menu_Card" style="-webkit-user-select: none; cursor: default;">
+  				          <div class="card-background" style="background-color:#FDD29A;">
+  				               <div class="little-arrow rootVoice {menu:'menu_Card'} clicked" menu="menu_Card" clicked="clicked" style="white-space: nowrap;"></div>                                                 
+  				                  <div class="card-header" style="background-color:rgb(196,140,67)">
+  				                      <div class="cardtext elipses" title="test3">Test 3</div>
+  				                  </div>  
+  				               </div>   
+  				     </li>
+  				     </div>
+  				     
+  				      <div draggable="true"><li id="card_192025057" title="Risk / Issue: Q1 Sales Metrics" class="card  cmVoice  {cMenu:'menu_Card'}" cmenu="menu_Card" style="-webkit-user-select: none; cursor: default;">
+  				          <div class="card-background" style="background-color:#FDD29A;">
+  				               <div class="little-arrow rootVoice {menu:'menu_Card'} clicked" menu="menu_Card" clicked="clicked" style="white-space: nowrap;"></div>                                                 
+  				                  <div class="card-header" style="background-color:rgb(196,140,67)">
+  				                      <div class="cardtext elipses" title="test4">Test 4</div>
+  				                  </div>
+  				               </div>     
+  				     </li>
+  				     </div>
+  				 </ul>
+  			</div>
+  			
+  			<div class = "col-md-3">
+  			<h4>In Progress</h4>
+  			 <div id='dropzone'><ul title="Ready to Start" id="lane_192025152_contents" laneid="192025152" style="height: 512px; -webkit-user-select: none;" class="cmVoice  laneContents connectedSortable  ui-sortable" cmenu="menu_LaneBody"> 
+  				    <li id="card_192025057" title="Risk / Issue: Q1 Sales Metrics" class="card  cmVoice  {cMenu:'menu_Card'}" cmenu="menu_Card" style="-webkit-user-select: none; cursor: default;">
+  				          <div class="card-background" style="background-color:#FDD29A;">
+  				               <div class="little-arrow rootVoice {menu:'menu_Card'} clicked" menu="menu_Card" clicked="clicked" style="white-space: nowrap;"></div>                                                 
+  				                  <div class="card-header" style="background-color:rgb(196,140,67)">
+  				                      <div class="cardtext elipses" title="Attach a Report!">Search Results Page</div>
+  				                  </div>  
+  				               </div>
+  				     </li>
+  			</div>	</div>
+  			
+  			<div class = "col-md-3">
+  			<h4>Ready for Review</h4>
+  			<ul title="Ready to Start" id="lane_192025152_contents" laneid="192025152" style="height: 512px; -webkit-user-select: none;" class="cmVoice  laneContents connectedSortable  ui-sortable" cmenu="menu_LaneBody"> 
+  				     <li id="card_192025057" title="Risk / Issue: Q1 Sales Metrics" class="card  cmVoice  {cMenu:'menu_Card'}" cmenu="menu_Card" style="-webkit-user-select: none; cursor: default;">
+  				          <div class="card-background" style="background-color:#FDD29A;">
+  				               <div class="little-arrow rootVoice {menu:'menu_Card'} clicked" menu="menu_Card" clicked="clicked" style="white-space: nowrap;"></div>                                                 
+  				                  <div class="card-header" style="background-color:rgb(196,140,67)">
+  				                      <div class="cardtext elipses" title="Attach a Report!">Welcome Page</div>
+  				                  </div>  
+  				               </div>
+  				     </li>
+  				 </ul>
+  			</div>
+  			
+  			<div class = "col-md-3">
+  			<h4>Recently Finished</h4>
+  			<ul title="Ready to Start" id="lane_192025152_contents" laneid="192025152" style="height: 512px; -webkit-user-select: none;" class="cmVoice  laneContents connectedSortable  ui-sortable" cmenu="menu_LaneBody"> 
+  				     <li id="card_192025057" title="Risk / Issue: Q1 Sales Metrics" class="card  cmVoice  {cMenu:'menu_Card'}" cmenu="menu_Card" style="-webkit-user-select: none; cursor: default;">
+  				          <div class="card-background" style="background-color:#FDD29A;">
+  				               <div class="little-arrow rootVoice {menu:'menu_Card'} clicked" menu="menu_Card" clicked="clicked" style="white-space: nowrap;"></div>                                                 
+  				                  <div class="card-header" style="background-color:rgb(196,140,67)">
+  				                      <div class="cardtext elipses" title="Attach a Report!">Login Functionality</div>
+  				                  </div>  
+  				               </div>
+  				     </li>
+  				 </ul></div>
+  			</div>
+    </div>
+    
+<!--Footer--> 
+<div id="footer">
+<div class="navbar navbar-default navbar-fixed-bottom">
+     <div class="container">
+   </div> <!-- container-->
+   </div> <!-- navbar navbar-default navbar-fixed-bottom" -->
+</div>
+
+</body>
+</html>
